@@ -100,8 +100,8 @@ def login_into_page(driver, url, username, password, logger):
             logger.info(f'Logged in Successfully, But Needed Change Password, username={username}, password={password}')
             return True
 
-        logout_btn = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.XPATH, '/html/body/div/div/div/div/div/div/form/button/span')))
+        # logout_btn = WebDriverWait(driver, 10).until(
+        #     EC.element_to_be_clickable((By.XPATH, '/html/body/div/div/div/div/div/div/form/button/span')))
 
         if driver.current_url == STATUS_URL_ADDRESS:
             logger.info(f'Logged in Successfully, username={username}, password={password}')
@@ -110,7 +110,7 @@ def login_into_page(driver, url, username, password, logger):
             raise Exception
     except Exception as e:
         logger.info(f'Failed Login Attempt, username={username}, password={password}')
-        logger.error(e.stacktrace[1])
+        # logger.error(e.stacktrace[1])
 
 
 def close_program(driver, logger):
